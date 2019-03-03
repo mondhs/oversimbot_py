@@ -1,0 +1,108 @@
+intents:
+- greet
+- my_name_is
+- affirm
+- deny
+- dont_know
+- prefered_travel_option
+- identify_first_obstacle
+- identify_second_chalange
+
+
+
+entities:
+- person_name
+- transprotation_option
+- first_obstacle
+- second_chalange
+- step
+
+
+
+slots:
+  person_name:
+    type: text
+  transprotation_option:
+    type: text
+  first_obstacle:
+    type: text
+  second_chalange:
+    type: text
+  step:
+    type: text
+
+
+
+actions:
+- utter_welcomeback
+- utter_whats_your_name
+- utter_nao_intro
+- utter_do_you_like_travel
+- utter_how_do_you_like_travel
+- utter_encourage
+- utter_respond_on_travel_option
+- utter_ask_what_is_first_obstacle
+- utter_first_obstacle_correct
+- utter_second_chalange
+- utter_second_chalange_correct
+- utter_bye
+- utter_please_comeback
+- utter_no_swamp_in_map
+- action_check_name
+- utter_not_clear
+- utter_utterance_reverted
+
+
+templates:
+  utter_welcomeback:
+  - text: "Labas!"
+  - text: "Laba!"
+  - text: "Sveki!"
+  utter_whats_your_name:
+  - text: "Koks tavo vardas?"
+  utter_nao_intro:
+  - text: "Labas žmogau vardu {person_name}. Aš esu Robotas Liepa. Mane pagamino Prancūzijoje, o lietuviškai kalbėti išmokau Lietuvoje, Vilniaus Universitete."
+  utter_do_you_like_travel:
+  - text: "Ar tau patinka keliauti?"
+  utter_how_do_you_like_travel:
+  - text: "Kaip dažniausiai keliauji tu? Pėsčiomis, automobiliu, dviračiu, o gal lėktuvu?"
+  - text: "Kai tu išsiruoši į kelionę kokį būdą tu dažniausiai renkiesi: eiti pėsčiomis, važiuoti mažina ar dviračiu, o gal skristi lėktuvu?"
+  utter_encourage:
+  - text: "Klausyk, juk su robotu keliausi ar ne?"
+  utter_respond_on_travel_option:
+  - text: "o aš moku tik vaikščioti, štai taip. Skaityti dar nemoku. Pažiūrėk žemėlapyje."
+  utter_ask_what_is_first_obstacle:
+  - text: "kokia bus pirmoji kliūtis?"
+  utter_first_obstacle_correct:
+  - text: "Aha, Tai Drūkšių ežeras. Jis didžiausias Lietuvoje."
+  utter_second_chalange_hints:
+  - text: "norint labirintu eiti toliau, mums reikia kuo greičiau persikelti į kitą ežero pusę. Kaip smagu, kad vėjas yra mums palankus, kelionės metu jis pūs mums į nugaras."
+  utter_second_chalange:
+  - text: "Kaip galima būtų persikelti į kitą ežero krantą?"
+  - text: "Kokia vandens transporto priemonė mums pagelbėtų?"
+  - text: "aš supratau, kad reikia laivo, kuriam plaukti padėtų vėjas. Reikės iškelti bures. Kaip toks laivas vadinasi?"
+  utter_second_chalange_correct:
+  - text: "O taip, ši vandens transporto priemonė manau tinkamiausia, vėjas pučia mums tinkama kryptimi, todėl tikrai turėtų pavykti greitai persikelti į kitą krantą."
+  utter_bye:
+  - text: "žaidimo pabaiga. Ate"
+  utter_not_clear:
+  - text: "susitarkim, kad kalbėsi aiškiau"
+  utter_utterance_reverted:
+  - text: "bandom dar kartą"
+  - text: "mėginam vėl"
+  - text: "mėginam kartu"
+  - text: "bandom kartu"
+  utter_please_comeback:
+  - text: "Gaila, bet manau dar pagalvosi ir susitiksime kitą kartą"
+  utter_no_swamp_in_map:
+  - text: "bet kad ta bala didelė, kažin ar gali žemėlapyje gali būti pažymėtos balos?"
+  - text: "balos būna tik po lietaus, vėliau išdžiūsta, jos yra mažos, kas dar gali būti panašios formos ir spalvinama mėlyna spalva?"
+  - text: "Koks vandens telkinys yra didesnis už balą?"
+  utter_see_too_big:
+  - text: "jūra juk didelė, o čia nupieštas mažesnis, mėlynas, apvalus, su vingiuotais kraštais objektas. Gal tai..."
+  utter_wind_powered_boat:
+  - text: "laivas mums tiktų, manau reikia pasirinkti tokį, kad persikeltume kuo greičiau ir dar  vėjui pučiant mums parankia kryptimi."
+  utter_manpower_boat_too_slow:
+  - text: "gerai sugalvojai, bet mums reikia persikelti kuo greičiau, o ežeras didelis, kažin ar užteks jėgų irtis per tokį didelį ežerą?"
+  utter_motor_boat_requires_maintainances:
+  -text: "taip, tiktų laivas su motoru, bet reikės prisipilti degalų, o mes skubame ir vėjas juk pučia palankus mums. Kaip gi vadinasi toks laivas, kurį plukdo vėjo jėga?"
