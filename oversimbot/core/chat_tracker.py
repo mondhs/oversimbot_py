@@ -40,7 +40,7 @@ class ChatTracker:
         self.handler_list = [handlers.NameUnderstoodHandler(), handlers.DontTravelHandler(), handlers.IdentifyFirstOstacleHandler(), handlers.SolveSecondChallangeHandler()]
 
     def load_trained_data(self):
-        with open('target/oversimbot_model.json') as f:
+        with open('oversimbot/data/oversimbot_model.json') as f:
             oversimbot_model = json.load(f)
         return oversimbot_model
 
