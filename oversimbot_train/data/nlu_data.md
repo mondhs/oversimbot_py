@@ -5,6 +5,7 @@
 
 
 ## intent:my_name_is
+- [Vardenis](person_name)
 - mano vardas [Vardenis](person_name)
 - aš esu [Vardenis](person_name)
 
@@ -41,6 +42,7 @@
 - niekada nepagalvojau
 
 ## intent:prefered_travel_option
+- [pėsčiomis](transprotation_option)
 - man patinka keliauti [pėsčiomis](transprotation_option)
 - aš mėgstu važiuoti [automobiliu](transprotation_option)
 - patinka keliauti [dviračiu](transprotation_option)
@@ -54,6 +56,7 @@
 - lėktuvu
 
 ## intent:identify_first_obstacle
+- [ežeras](first_obstacle)
 - čia yra [ežeras](first_obstacle)
 - manau čia [bala](first_obstacle)
 - atrodo kaip [jūra](first_obstacle)
@@ -67,6 +70,7 @@
 
 
 ## intent:identify_second_chalange
+- [laivu](second_chalange)
 - galima plaukti [laivu](second_chalange)
 - galima perplaukti su [laivu](second_chalange)
 - galima plaukti su [irklente](second_chalange)

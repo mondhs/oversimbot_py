@@ -29,7 +29,7 @@ class TestParser(unittest.TestCase):
 
 
 
-    def test_story_parer(self):
+    def _test_story_parer(self):
         storyParser = story_parser.StoryParser()
         story = storyParser.parse("oversimbot_train/data/stories_nao.md")
         # print(story.name)
@@ -42,9 +42,11 @@ class TestParser(unittest.TestCase):
         intent = intent_repo.find_intent("labas")
         # print(intent)
         self.assertEqual(intent.key, 'greet')
+        print("\n".join(intent_repo.extract_sentences()))
+        #print("\n".join(intent_repo.extract_words()))
 
 
-    def test_domain_parser(self):
+    def _test_domain_parser(self):
         chatDomainParser = domain_parser.ChatDomainParser()
         chat_domain = chatDomainParser.parse("oversimbot_train/data/domain.yml")
         intent = intent_response.IntentResponse()

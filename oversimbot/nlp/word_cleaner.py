@@ -27,4 +27,5 @@ man
 mano
 tau
 tavo
+iki
 """

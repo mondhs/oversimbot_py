@@ -15,7 +15,7 @@ class ChatTrainer:
         tained_data={}
         storyParser = story_parser.StoryParser()
         story = storyParser.parse("oversimbot_train/data/stories_nao.md")
-        print(["test1", story.intent_phrases])
+        # print(["test1", story.intent_phrases])
 
         intentParser = intent_parser.IntentParser()
         intent_repo = intentParser.parse("oversimbot_train/data/nlu_data.md")
@@ -45,11 +45,12 @@ class ChatTrainer:
     def upadate_intent_indexes(self, intent_repo, intentions_vocabluary):
         phrases = intent_repo.phrase_to_intent.keys()
         for phrase in phrases:
-            entities_exists_matcher = re.search('\[(.*)\]\((.*)\)', phrase)
+            #entities_exists_matcher = re.search('\[(.*)\]\((.*)\)', phrase)
+            entities_exists_matcher = re.search('\((.*)\)', phrase)
             #is needed search for entities
             if(entities_exists_matcher):
-                plain_phrase = re.sub(r"(\[.*\])", "", phrase).strip()
-                plain_phrase = re.sub(r"(\(.*\))", "", plain_phrase).strip()
+                # plain_phrase = re.sub(r"(\[.*\])", "", phrase).strip()
+                plain_phrase = re.sub(r"(\(.*\))", "", phrase).strip()
                 cleaned_phrase = intent_repo.cleaner.clean_stop_words(plain_phrase.split(" "))
                 core_phrase = list(intent_repo.lemmatizer.find_word_core_list(cleaned_phrase).values())
                 core_indx = []
@@ -60,12 +61,14 @@ class ChatTrainer:
 
 
     def build_intentions_vocabluary(self, intent_repo):
-        phrases = intent_repo.phrase_to_intent.keys()
+        # TB DELETED phrases = intent_repo.phrase_to_intent.keys()
+        phrases = intent_repo.extract_sentences()
         words = []
 
         for phrase in phrases:
             plain_phrase = re.sub(r"(\[.*\])", "", phrase).strip()
             plain_phrase = re.sub(r"(\(.*\))", "", plain_phrase).strip()
+            # plain_phrase = phrase.strip()
             words.extend(plain_phrase.split(" "))
 
         # print(words)

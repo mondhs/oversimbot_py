@@ -6,6 +6,9 @@ class WordLemmatizer:
 
     def find_word_core(self, word):
         base_form = word
+        print(word)
+        if(len(base_form)<3):
+            return base_form
         for ending in self.ending_list:
             if(word.endswith(ending)):
                 # base_form = base_form.replace(ending, "")
@@ -17,7 +20,8 @@ class WordLemmatizer:
         rtn_dict = {}
         for word in text_list:
             core = self.find_word_core(word)
-            rtn_dict[word]=core
+            if(len(core)>0):
+                rtn_dict[word]=core
         return rtn_dict
 
 

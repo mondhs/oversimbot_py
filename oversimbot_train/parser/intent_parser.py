@@ -12,8 +12,6 @@ class IntentParser:
         print()
 
 
-
-
     def parse(self, file_path):
         f = open(file_path)
         intent_repo = intent_repository.IntentRepository()
